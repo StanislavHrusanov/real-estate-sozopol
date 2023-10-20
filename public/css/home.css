@@ -63,3 +63,53 @@
     height: 150px;
     width: 195px;
 }
+
+.last-added-title {
+    margin: 1rem 0;
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: lightseagreen;
+}
+
+.last-added-container {
+    width: 90%;
+}
+
+.last-added-container img {
+    width: 100px;
+    height: 100px;
+}
+
+.ad-info {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.last-added-container a {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.ad-info span {
+    padding: 5px;
+    font-size: 1.25rem;
+}
+
+.ad-type {
+    font-weight: bold;
+    color: black;
+}
+
+.ad-kvadratura {
+    color: gray;
+}
+
+.ad-cena {
+    font-weight: bold;
+    color: rgb(153, 0, 0);
+}
