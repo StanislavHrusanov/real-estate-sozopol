@@ -5,6 +5,7 @@ html {
 body {
     /* background-color: black; */
     position: relative;
+    font-family: Arial, Verdana, sans-serif;
 }
 
 header {
@@ -52,6 +53,7 @@ ul {
     align-items: center;
     text-align: center;
     padding: 0.2rem;
+    font-family: Arial, Verdana, sans-serif;
     cursor: pointer;
     color: black;
     text-transform: uppercase;
@@ -63,6 +65,7 @@ ul {
     top: 12px;
     right: 10px;
     background-color: lightseagreen;
+    color: rgb(30, 32, 36);
     border: none;
     font-size: 1.4rem;
 }
@@ -74,6 +77,37 @@ footer {
     background-color: lightseagreen;
 }
 
+.footer-contacts-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts-icons-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts-title{
+    margin-top: 3px;
+    padding: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(30, 32, 36);
+}
+
+.contacts-icons{
+    margin: 3px;
+    color: rgb(30, 32, 36);
+}
+
+.contacts-icons i {
+    margin-right: 5px;
+    font-size: 1.1rem;
+    color: rgb(30, 32, 36);
+}
+
 .follow-footer-container {
     display: flex;
     flex-direction: column;
@@ -81,17 +115,26 @@ footer {
 }
 
 .follow-title {
-    padding: 3px;
-}
-
-.socials-icons {
-    margin: 3px;
+    margin-bottom: 5px;
+    padding: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: rgb(30, 32, 36);
 }
 
+.socials-icons {
+    margin: 4px;
+    padding:4px 5px;
+    font-size: 1.1rem;
+    background-color: rgb(30, 32, 36);
+    color: rgb(247, 149, 23);
+}
+
 .all-right {
-    padding: 5px;
-    font-size: 1.15rem;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(30, 32, 36);
 }
 
 @media screen and (min-width:768px) {
