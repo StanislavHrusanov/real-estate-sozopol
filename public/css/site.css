@@ -60,6 +60,11 @@ ul {
     text-decoration: none;
 }
 
+.nav-link:hover{
+    color: whitesmoke;
+    transition: all .2s ease-in-out;
+}
+
 .btn-menu {
     position: absolute;
     top: 12px;
@@ -74,6 +79,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
     background-color: lightseagreen;
 }
 
