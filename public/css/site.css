@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    /* background-color: black; */
+    background-color: rgb(243, 244, 249);
     position: relative;
     font-family: Arial, Verdana, sans-serif;
 }
@@ -52,6 +52,7 @@ ul {
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
+    margin-top: 3px;
     padding: 0.2rem;
     font-family: Arial, Verdana, sans-serif;
     cursor: pointer;
@@ -60,7 +61,7 @@ ul {
     text-decoration: none;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: whitesmoke;
     transition: all .2s ease-in-out;
 }
@@ -83,19 +84,19 @@ footer {
     background-color: lightseagreen;
 }
 
-.footer-contacts-container{
+.footer-contacts-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.contacts-icons-container{
+.contacts-icons-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.contacts-title{
+.contacts-title {
     margin-top: 3px;
     padding: 4px;
     font-size: 1.2rem;
@@ -103,7 +104,7 @@ footer {
     color: rgb(30, 32, 36);
 }
 
-.contacts-icons{
+.contacts-icons {
     margin: 3px;
     color: rgb(30, 32, 36);
 }
@@ -130,7 +131,7 @@ footer {
 
 .socials-icons {
     margin: 4px;
-    padding:4px 5px;
+    padding: 4px 5px;
     font-size: 1.1rem;
     background-color: rgb(30, 32, 36);
     color: rgb(247, 149, 23);

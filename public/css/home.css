@@ -15,6 +15,7 @@
     height: auto;
     border: 2px solid lightgray;
     border-radius: 5px;
+    background-color: rgb(243, 244, 249);
 }
 
 .search-ul {
@@ -39,6 +40,7 @@
     width: 100%;
     border: 2px solid lightgrey;
     border-radius: 5px;
+    background-color: white;
 }
 
 #search-btn {
@@ -53,7 +55,7 @@
     cursor: pointer;
 }
 
-#search-btn:hover{
+#search-btn:hover {
     color: whitesmoke;
     transition: all .2s ease-in-out;
 }
@@ -100,6 +102,7 @@
     border-radius: 5px;
     overflow: hidden;
     text-decoration: none;
+    background-color: white;
 }
 
 .last-added-container a:hover {
