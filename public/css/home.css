@@ -53,6 +53,11 @@
     cursor: pointer;
 }
 
+#search-btn:hover{
+    color: whitesmoke;
+    transition: all .2s ease-in-out;
+}
+
 .title {
     /* margin-top: 1rem; */
     font-size: 1.5rem;
@@ -95,6 +100,12 @@
     border-radius: 5px;
     overflow: hidden;
     text-decoration: none;
+}
+
+.last-added-container a:hover {
+    background-color: lightseagreen;
+    border: 2px solid lightseagreen;
+    transition: all .2s ease-in-out;
 }
 
 .ad-info span {
@@ -157,6 +168,6 @@
 @media screen and (min-width:768px) {
     .last-added-container {
         grid-template-columns: repeat(3, 1fr);
-        
+
     }
 }
