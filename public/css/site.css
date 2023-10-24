@@ -141,6 +141,7 @@ footer {
 
     ul {
         text-align: end;
+        margin-right: 20px;
     }
 
     .nav {
@@ -168,13 +169,4 @@ footer {
     .btn-menu {
         display: none;
     }
-}
-
-@media screen and (min-width:1100px) {
-
-    .nav-link {
-        font-size: 1.05rem;
-    }
-
-
 }
