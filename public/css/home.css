@@ -50,6 +50,7 @@
     border-radius: 5px;
     background-color: lightseagreen;
     color: rgb(30, 32, 36);
+    cursor: pointer;
 }
 
 .title {
@@ -78,7 +79,7 @@
 
 .last-added-container img {
     width: 100px;
-    height: 100px;
+    height: auto;
 }
 
 .ad-info {
@@ -113,4 +114,49 @@
 .ad-cena {
     font-weight: bold;
     color: rgb(153, 0, 0);
+}
+
+@media screen and (min-width:480px) {
+    .last-added-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .last-added-container a {
+        display: block;
+    }
+
+    .last-added-container img {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .title {
+        font-size: 1.7rem;
+    }
+
+    .search-li label {
+        font-size: 1.1rem;
+    }
+
+    .search-li input,
+    .search-li select {
+        font-size: 1rem;
+    }
+
+    #search-btn {
+        font-size: 1.2rem;
+    }
+
+    .last-added-title {
+        font-size: 1.55rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .last-added-container {
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
 }
