@@ -1,0 +1,127 @@
+#details-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+}
+
+.img-desc {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.img-desc h1 {
+    margin: 0.5rem 0rem 1rem 0rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(30, 32, 36);
+    text-align: center;
+}
+
+.img-desc h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.img-desc p {
+    margin-bottom: 1rem;
+}
+
+.desc-table {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.desc-table tr:nth-of-type(odd) td {
+    background: #d8ebff;
+}
+
+.desc-table tr:nth-of-type(even) td {
+    background: #c0dcf9;
+}
+
+.desc-table td {
+    padding: 2px 5px;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.image-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.image-wrapper i {
+    top:50%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    /* border-radius: 50%; */
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+
+.image-wrapper i:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.image-wrapper i:hover {
+    background: #f2f2f2;
+}
+
+.image-wrapper i:first-child {
+    left: 0;
+}
+
+.image-wrapper i:last-child {
+    right: 0;
+}
+
+.image-wrapper .carousel {
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.carousel.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+    pointer-events: none;
+}
+
+.carousel img {
+    object-fit: cover;
+    user-select: none;
+    width:100%;
+    max-height: 85vh;
+}
+
+.carousel img:first-child {
+    margin-left: 0px;
+}
