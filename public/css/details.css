@@ -76,8 +76,7 @@ table {
     position: absolute;
     text-align: center;
     line-height: 44px;
-    background: #fff;
-    /* border-radius: 50%; */
+    background-color: rgb(243, 244, 249);
     transform: translateY(-50%);
     transition: transform 0.1s linear;
 }
@@ -87,7 +86,7 @@ table {
 }
 
 .image-wrapper i:hover {
-    background: #f2f2f2;
+    background: lightseagreen;
 }
 
 .image-wrapper i:first-child {
