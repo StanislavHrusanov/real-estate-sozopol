@@ -55,6 +55,12 @@
     border-bottom: 2px solid rgb(175, 175, 175);
 }
 
+.input select {
+    width: 100%;
+    height: 28.4px;
+    background-color: rgb(240, 240, 240);
+}
+
 .action {
     display: flex;
     justify-content: center;
