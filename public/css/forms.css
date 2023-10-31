@@ -58,7 +58,12 @@
 .input select {
     width: 100%;
     height: 28.4px;
+    font-size: 0.95rem;
     background-color: rgb(240, 240, 240);
+}
+
+#img {
+    font-size: 0.95rem;
 }
 
 .action {
