@@ -1,4 +1,4 @@
-#catalog-main{
+#catalog-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3.5rem 0 1rem;
+    margin: 3.5rem 0 0;
     width: 90%;
 }
 
@@ -69,6 +69,47 @@
 .ad-cena {
     font-weight: bold;
     color: rgb(153, 0, 0);
+}
+
+.pagination {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pages select {
+    margin: 1rem;
+    padding: 0.3rem;
+    font-weight: bold;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    color: rgb(70, 70, 70);
+}
+
+.prev,
+.next {
+    margin: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: lightseagreen;
+    color: rgb(70, 70, 70);
+    border: none;
+    border-radius: 5px;
+}
+
+.prev:hover,
+.next:hover {
+    color: whitesmoke;
+    transition: all .2s ease-in-out;
+}
+
+.prev i,
+.next i {
+    font-size: 1.5rem;
 }
 
 @media screen and (min-width:480px) {
