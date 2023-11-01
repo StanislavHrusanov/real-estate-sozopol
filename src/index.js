@@ -1,10 +1,15 @@
 const express = require('express');
 const { initializeDatabase } = require('./config/database');
 const { PORT } = require('./config/env');
+const routes = require('./routes');
 
 const app = express();
 
 require('./config/handlebars')(app);
+
+app.use('/public', express.static('public'));
+
+app.use(routes);
 
 initializeDatabase()
     .then(() => {
