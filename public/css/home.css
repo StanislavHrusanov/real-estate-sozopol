@@ -32,12 +32,14 @@
 .search-li label {
     display: block;
     margin-bottom: 3px;
+    font-size: 1.1rem;
 }
 
 .search-li input,
 .search-li select {
     margin: 2px 0;
     width: 100%;
+    font-size: 1rem;
     border: 2px solid lightgrey;
     border-radius: 5px;
     background-color: white;
@@ -47,6 +49,7 @@
     margin: 6px 0 6px 0;
     padding: 3px;
     width: 100%;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -60,9 +63,9 @@
     transition: all .2s ease-in-out;
 }
 
-.title {
+.title-home {
     /* margin-top: 1rem; */
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: lightseagreen;
 }
@@ -146,21 +149,21 @@
         aspect-ratio: 16/9;
     }
 
-    .title {
-        font-size: 1.7rem;
+    .title-home {
+        font-size: 2rem;
     }
 
     .search-li label {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .search-li input,
     .search-li select {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     #search-btn {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .last-added-title {
