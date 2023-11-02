@@ -120,6 +120,22 @@
     .form-view {
         width: 50%;
     }
+
+    .form-view h1 {
+        font-size: 2rem;
+    }
+
+    .form-view label {
+        font-size: 1.3rem;
+    }
+
+    .action input {
+        font-size: 1.35rem;
+    }
+
+    .input input {
+        font-size: 1.25rem;
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -136,5 +152,21 @@
 @media screen and (min-width:1280px) {
     .form-view {
         width: 35%;
+    }
+
+    .form-view h1 {
+        font-size: 2.2rem;
+    }
+
+    .form-view label {
+        font-size: 1.4rem;
+    }
+
+    .action input {
+        font-size: 1.45rem;
+    }
+
+    .input input {
+        font-size: 1.35rem;
     }
 }
