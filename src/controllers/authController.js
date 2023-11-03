@@ -9,7 +9,7 @@ router.get('/register', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     const userData = req.body;
-    console.log(userData);
+
     try {
         const createdUser = await authService.register(userData);
 

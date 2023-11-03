@@ -18,7 +18,7 @@ exports.createToken = (user) => {
 
 exports.register = async ({ username, firstName, lastName, password, email }) => {
 
-    const hashedPassword = bcrypt.hash(password, SALT_ROUNDS);
+    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
 
     const createdUser = User.create({
         username,
