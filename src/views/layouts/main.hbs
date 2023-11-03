@@ -23,15 +23,18 @@
             <nav class="nav">
                 <ul>
                     <li><a class="nav-link" href="/">Начало</a></li>
+                    <li><a class="nav-link" href="/catalog/add">Добави имот</a></li>
+                    {{#if user}}
+                    <div id="user">
+                        <li><a class="nav-link" href="">Моят профил</a></li>
+                        <li><a class="nav-link" href="">Изход</a></li>
+                    </div>
+                    {{else}}
                     <div id="guest">
                         <li><a class="nav-link" href="/auth/register">Регистрация</a></li>
                         <li><a class="nav-link" href="/auth/login">Вход</a></li>
                     </div>
-                    <div id="user">
-                        <li><a class="nav-link" href="/catalog/add">Добави имот</a></li>
-                        <li><a class="nav-link" href="">Моят профил</a></li>
-                        <li><a class="nav-link" href="">Изход</a></li>
-                    </div>
+                    {{/if}}
                 </ul>
 
             </nav>

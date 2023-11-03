@@ -201,7 +201,6 @@ footer {
 
     ul {
         text-align: end;
-        margin-right: 20px;
     }
 
     .nav {
@@ -212,6 +211,7 @@ footer {
 
     .nav-link {
         display: inline-block;
+        margin-right: 10px;
     }
 
     li {
