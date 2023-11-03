@@ -17,10 +17,15 @@ exports.createToken = (user) => {
 }
 
 exports.register = async ({ username, firstName, lastName, password, email }) => {
+    const user = await User.findOne({ username });
+
+    if (user) {
+        throw 'Това потребителско име вече съществува!';
+    }
 
     const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
 
-    const createdUser = User.create({
+    const createdUser = await User.create({
         username,
         firstName,
         lastName,
@@ -29,4 +34,21 @@ exports.register = async ({ username, firstName, lastName, password, email }) =>
     });
 
     return createdUser;
+}
+
+exports.login = async ({ username, password }) => {
+    const user = await User.findOne({ username });
+
+    if (!user) {
+        console.log('log ne');
+        throw 'Невалидно потребителско име или парола!';
+    }
+
+    const isValid = await bcrypt.compare(password, user.password);
+
+    if (!isValid) {
+        throw 'Невалидно потребителско име или парола!';
+    }
+
+    return this.createToken(user);
 }
