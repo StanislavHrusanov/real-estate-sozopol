@@ -1,7 +1,7 @@
 <main id="form-main">
     <section class="form-view">
         <h1>Добави обява</h1>
-        <form method="post" action="" class="forms">
+        <form method="post" enctype="multipart/form-data" action="" class="forms">
             <div class="input">
                 <label for="type">Вид имот</label>
                 <select name="type" id="type">
@@ -22,27 +22,27 @@
             </div>
             <div class="input">
                 <label for="location">Локация</label>
-                <input type="text" name="location" id="location">
+                <input type="text" name="location" id="location" value="{{ad.location}}">
             </div>
             <div class="input">
                 <label for="price">Цена</label>
-                <input type="text" name="price" id="price">
+                <input type="number" name="price" id="price" value="{{ad.price}}">
             </div>
             <div class="input">
                 <label for="area">Площ</label>
-                <input type="text" name="area" id="area">
+                <input type="number" name="area" id="area" value="{{ad.area}}">
             </div>
             <div class="input">
                 <label for="floor">Етаж</label>
-                <input type="text" name="floor" id="floor">
+                <input type="text" name="floor" id="floor" value="{{ad.floor}}">
             </div>
             <div class="input">
-                <label for="phone">Телефон</label>
-                <input type="text" name="phone" id="phone">
+                <label for="phoneNumber">Телефон</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" value="{{ad.phoneNumber}}">
             </div>
             <div class="input">
                 <label for="info">Допълнителна информация</label>
-                <input type="text" name="info" id="info">
+                <input type="text" name="info" id="info" value="{{ad.info}}">
             </div>
             <div class="action">
                 <input type="submit" value="Добави"></input>
