@@ -29,7 +29,7 @@ const adSchema = new mongoose.Schema({
         required: true
     },
     floor: {
-        type: Number,
+        type: String,
         required: true
     },
     phoneNumber: {
@@ -38,6 +38,10 @@ const adSchema = new mongoose.Schema({
     },
     info: {
         type: String
+    },
+    owner: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
     }
 });
 
