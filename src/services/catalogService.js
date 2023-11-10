@@ -14,3 +14,5 @@ exports.uploadToCloudinary = async (files, folder) => {
 }
 
 exports.createAd = (ad) => Ad.create(ad);
+
+exports.getlastAdded = () => Ad.find().sort({ createdAt: -1 }).limit(3);
