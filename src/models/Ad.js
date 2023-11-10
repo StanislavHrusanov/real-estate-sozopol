@@ -49,7 +49,7 @@ const adSchema = new mongoose.Schema({
             ref: 'User'
         }
     ]
-});
+}, { timestamps: true });
 
 const Ad = mongoose.model('Ad', adSchema);
 
