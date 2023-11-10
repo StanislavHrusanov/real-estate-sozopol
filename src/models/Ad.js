@@ -42,7 +42,13 @@ const adSchema = new mongoose.Schema({
     owner: {
         type: mongoose.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    favourites: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
 });
 
 const Ad = mongoose.model('Ad', adSchema);
