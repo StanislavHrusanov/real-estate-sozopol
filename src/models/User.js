@@ -20,7 +20,13 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
-    }
+    },
+    favourites: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Ad'
+        }
+    ]
 });
 
 const User = mongoose.model('User', userSchema);
