@@ -1,0 +1,52 @@
+<main id="details-page">
+    <div class="details-container">
+        <h1>{{ad.type}}</h1>
+        <h2>{{ad.location}}</h2>
+        <div class="image-wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">
+                {{#each ad.images}}
+                <img src="{{url}}" alt="">
+                {{/each}}
+            </div>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+        <div class="description">
+            <h3>Основна информация</h3>
+            <div class="desc-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Локация</td>
+                            <td>{{ad.location}}</td>
+                        </tr>
+                        <tr>
+                            <td>Цена</td>
+                            <td>{{ad.price}} EUR</td>
+                        </tr>
+                        <tr>
+                            <td>Площ</td>
+                            <td>{{ad.area}} кв.м</td>
+                        </tr>
+                        <tr>
+                            <td>Етаж</td>
+                            <td>{{ad.floor}}</td>
+                        </tr>
+                        <tr>
+                            <td>Телефон</td>
+                            <td>{{ad.phoneNumber}}</td>
+                        </tr>
+                        <tr>
+                            <td>Видяно</td>
+                            <td>{{ad.views}} пъти</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Допълнителна информация</h3>
+            <p>{{ad.info}}</p>
+        </div>
+
+    </div>
+</main>
+<script src="../../../public/js/script.js" defer></script>

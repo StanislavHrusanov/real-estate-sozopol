@@ -21,10 +21,18 @@
 }
 
 .details-container h1 {
-    margin: 0.5rem 0rem 1rem 0rem;
+    margin: 0.5rem 0rem 0rem 0rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: rgb(30, 32, 36);
+    text-align: center;
+}
+
+.details-container h2 {
+    margin: 0.35rem 0rem 0.65rem 0rem;
+    font-size: 1.35rem;
+    /* font-weight: bold; */
+    color: rgb(85, 85, 85);
     text-align: center;
 }
 
@@ -135,6 +143,10 @@ table {
         width: 100%;
     }
 
+    .details-container h2 {
+        width: 100%;
+    }
+
     .image-wrapper {
         width: 60%;
         align-self: baseline;
@@ -146,10 +158,11 @@ table {
         width: calc(40% - 1rem);
     }
 
-    .description h3{
+    .description h3 {
         margin-top: 0;
     }
-    .description p{
+
+    .description p {
         line-height: 1.25rem;
     }
 
@@ -157,7 +170,7 @@ table {
         padding: 5px 5px;
     }
 
-    table{
+    table {
         margin-bottom: 1rem;
     }
 }
