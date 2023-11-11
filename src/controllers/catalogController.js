@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const cloudinary = require('../config/cloudinary');
-const upload = require('../middlewares/upload');
+const imgUpload = require('../middlewares/upload');
 const catalogService = require('../services/catalogService');
 
 router.get('/add', async (req, res) => {
     res.render('catalog/add');
 });
 
-router.post('/add', upload.array('images', 10), async (req, res) => {
+router.post('/add', imgUpload, async (req, res) => {
 
     const ad = {
         type: req.body.type,
