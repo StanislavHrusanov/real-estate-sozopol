@@ -39,6 +39,9 @@ const adSchema = new mongoose.Schema({
     info: {
         type: String
     },
+    views: {
+        type: Number
+    },
     owner: {
         type: mongoose.Types.ObjectId,
         ref: 'User'
