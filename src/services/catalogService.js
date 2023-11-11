@@ -4,10 +4,16 @@ const cloudinary = require('../config/cloudinary');
 exports.uploadToCloudinary = async (files, folder) => {
     const imagesData = [];
 
-    for (const file of files) {
-        const path = file.path;
-        const data = await cloudinary.uploader.upload(path, { folder });
-        imagesData.push({ url: data.url, public_id: data.public_id });
+    const mainImgPath = files.mainImage[0].path;
+    const mainImgData = await cloudinary.uploader.upload(mainImgPath, { folder });
+    imagesData.push({ url: mainImgData.url, public_id: mainImgData.public_id });
+
+    if (files.images.length > 0) {
+        for (const file of files.images) {
+            const path = file.path;
+            const data = await cloudinary.uploader.upload(path, { folder });
+            imagesData.push({ url: data.url, public_id: data.public_id });
+        }
     }
 
     return imagesData;
