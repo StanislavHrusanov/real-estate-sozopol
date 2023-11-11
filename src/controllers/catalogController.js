@@ -16,7 +16,8 @@ router.post('/add', imgUpload, async (req, res) => {
         area: Number(req.body.area),
         floor: req.body.floor,
         phoneNumber: req.body.phoneNumber,
-        info: req.body.info
+        info: req.body.info,
+        views: 0
     };
 
     try {
@@ -30,6 +31,14 @@ router.post('/add', imgUpload, async (req, res) => {
         res.render('catalog/add', { ad, error });
     }
 
+});
+
+router.get('/:adId/details', async (req, res) => {
+    const adId = req.params.adId;
+    await catalogService.addView(adId);
+    const ad = await catalogService.getOne(adId).lean();
+
+    res.render('catalog/details', { ad });
 });
 
 module.exports = router;
