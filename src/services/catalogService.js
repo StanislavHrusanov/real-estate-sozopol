@@ -22,3 +22,12 @@ exports.uploadToCloudinary = async (files, folder) => {
 exports.createAd = (ad) => Ad.create(ad);
 
 exports.getlastAdded = () => Ad.find().sort({ createdAt: -1 }).limit(3);
+
+exports.getOne = (id) => Ad.findById(id);
+
+exports.addView = async (adId) => {
+    const ad = await this.getOne(adId);
+
+    ad.views += 1;
+    await ad.save();
+}
