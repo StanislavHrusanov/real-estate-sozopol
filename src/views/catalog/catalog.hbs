@@ -1,0 +1,32 @@
+<main id="catalog-main">
+    <div class="catalog-container">
+        {{#if ads.length}}
+        <div class="number-of-ads">1 - 12 от общо 100 обяви</div>
+        <div class="ads-container">
+            {{#each ads}}
+            <a href="/catalog/{{_id}}/details">
+                <img src="{{images.0.url}}" alt="">
+                <div class="ad-info">
+                    <span class="ad-type">{{type}}</span>
+                    <span class="ad-kvadratura">{{area}}кв.м</span>
+                    <span class="ad-cena">{{price}} EUR</span>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        <div class="pagination">
+            <button class="prev"><i class="fa-solid fa-left-long"></i></button>
+            <div class="pages">
+                <select name="" id="">
+                    <option value="">1</option>
+                </select>
+            </div>
+            <button class="next"><i class="fa-solid fa-right-long"></i></button>
+        </div>
+        {{else}}
+        <div class="no-ads">
+            <p>Няма намерени обяви!</p>
+        </div>
+        {{/if}}
+    </div>
+</main>
