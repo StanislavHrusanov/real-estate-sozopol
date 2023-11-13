@@ -71,6 +71,18 @@
     color: rgb(153, 0, 0);
 }
 
+.no-ads {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65vh;
+}
+
+.no-ads p {
+    font-size: 1.5rem;
+}
+
 .pagination {
     display: flex;
     margin: 1rem 0;
