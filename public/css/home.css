@@ -46,6 +46,9 @@
 }
 
 #search-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
     margin: 6px 0 6px 0;
     padding: 3px;
     width: 100%;
