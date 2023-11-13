@@ -45,5 +45,9 @@ exports.search = (type, sort, price, area) => {
         currArea = Number.MIN_SAFE_INTEGER;
     }
 
+    if (type == 'ВСИЧКИ') {
+        return Ad.find({ price: { $lte: currPrice }, area: { $gte: currArea } }).sort(util.sortingCriteria[sort]);
+    }
+
     return Ad.find({ type: type, price: { $lte: currPrice }, area: { $gte: currArea } }).sort(util.sortingCriteria[sort]);
 }
