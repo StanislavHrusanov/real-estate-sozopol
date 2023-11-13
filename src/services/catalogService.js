@@ -1,5 +1,6 @@
 const Ad = require('../models/Ad');
 const cloudinary = require('../config/cloudinary');
+const util = require('../utils/util');
 
 exports.uploadToCloudinary = async (files, folder) => {
     const imagesData = [];
@@ -30,4 +31,19 @@ exports.addView = async (adId) => {
 
     ad.views += 1;
     await ad.save();
+}
+
+exports.search = (type, sort, price, area) => {
+    let currPrice = price;
+    let currArea = area;
+
+    if (currPrice == '') {
+        currPrice = Number.MAX_SAFE_INTEGER;
+    }
+
+    if (currArea == '') {
+        currArea = Number.MIN_SAFE_INTEGER;
+    }
+
+    return Ad.find({ type: type, price: { $lte: currPrice }, area: { $gte: currArea } }).sort(util.sortingCriteria[sort]);
 }
