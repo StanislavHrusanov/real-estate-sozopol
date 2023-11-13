@@ -41,4 +41,12 @@ router.get('/:adId/details', async (req, res) => {
     res.render('catalog/details', { ad });
 });
 
+router.get('/search?', async (req, res) => {
+    const { type, sort, price, area } = req.query;
+
+    const ads = await catalogService.search(type, sort, price, area).lean();
+
+    res.render('catalog/catalog', { ads });
+});
+
 module.exports = router;
