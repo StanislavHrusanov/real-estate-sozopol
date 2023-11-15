@@ -9,7 +9,7 @@ exports.uploadToCloudinary = async (files, folder) => {
     const mainImgData = await cloudinary.uploader.upload(mainImgPath, { folder });
     imagesData.push({ url: mainImgData.url, public_id: mainImgData.public_id });
 
-    if (files.images.length > 0) {
+    if (files.images) {
         for (const file of files.images) {
             const path = file.path;
             const data = await cloudinary.uploader.upload(path, { folder });

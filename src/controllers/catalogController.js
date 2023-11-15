@@ -8,7 +8,6 @@ router.get('/add', async (req, res) => {
 });
 
 router.post('/add', imgUpload, async (req, res) => {
-
     const ad = {
         type: req.body.type,
         location: req.body.location,
