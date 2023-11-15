@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { SESSION_NAME } = require('../config/env');
 const authService = require('../services/authService');
-
+const validation = require('../utils/validation');
 
 router.get('/register', async (req, res) => {
     res.render('auth/register');
@@ -11,6 +11,8 @@ router.post('/register', async (req, res) => {
     const userData = req.body;
 
     try {
+        validation.validateUser(userData);
+
         const createdUser = await authService.register(userData);
 
         const token = await authService.createToken(createdUser);
