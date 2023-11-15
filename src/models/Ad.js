@@ -29,8 +29,7 @@ const adSchema = new mongoose.Schema({
         required: true
     },
     floor: {
-        type: String,
-        required: true
+        type: String
     },
     phoneNumber: {
         type: String,
