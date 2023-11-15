@@ -28,10 +28,12 @@
                             <td>Площ</td>
                             <td>{{ad.area}} кв.м</td>
                         </tr>
+                        {{#if ad.floor}}
                         <tr>
                             <td>Етаж</td>
                             <td>{{ad.floor}}</td>
                         </tr>
+                        {{/if}}
                         <tr>
                             <td>Телефон</td>
                             <td>{{ad.phoneNumber}}</td>
