@@ -32,6 +32,11 @@ router.post('/login', async (req, res) => {
     const userData = req.body;
 
     try {
+
+        if (userData.username == '' || userData.password == '') {
+            throw ('Невалидно потребителско име или парола!');
+        }
+
         const token = await authService.login(userData);
 
         res.cookie(SESSION_NAME, token, { httpOnly: true });
