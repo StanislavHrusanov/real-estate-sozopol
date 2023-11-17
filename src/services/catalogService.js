@@ -34,8 +34,8 @@ exports.addView = async (adId) => {
 }
 
 exports.search = (type, sort, price, area) => {
-    let currPrice = price;
-    let currArea = area;
+    let currPrice = Number(price);
+    let currArea = Number(area);
 
     if (currPrice == '') {
         currPrice = Number.MAX_SAFE_INTEGER;

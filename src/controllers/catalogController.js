@@ -2,6 +2,7 @@ const router = require('express').Router();
 const cloudinary = require('../config/cloudinary');
 const imgUpload = require('../middlewares/upload');
 const catalogService = require('../services/catalogService');
+const validation = require('../utils/validation');
 
 router.get('/add', async (req, res) => {
     res.render('catalog/add');
@@ -11,8 +12,8 @@ router.post('/add', imgUpload, async (req, res) => {
     const ad = {
         type: req.body.type,
         location: req.body.location,
-        price: Number(req.body.price),
-        area: Number(req.body.area),
+        price: req.body.price,
+        area: req.body.area,
         floor: req.body.floor,
         phoneNumber: req.body.phoneNumber,
         info: req.body.info,
@@ -20,6 +21,9 @@ router.post('/add', imgUpload, async (req, res) => {
     };
 
     try {
+
+        validation.validateAdData(ad, req.files);
+
         const imagesData = await catalogService.uploadToCloudinary(req.files, 'properties');
         ad.images = imagesData;
         ad.owner = req.user._id;
