@@ -92,7 +92,8 @@
 
 .last-added-container img {
     width: 100px;
-    height: auto;
+    height: 100px;
+    background-color: rgb(170, 170, 170);
 }
 
 .ad-info {
