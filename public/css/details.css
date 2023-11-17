@@ -137,6 +137,27 @@ table {
     margin-left: 0px;
 }
 
+.edit-delete {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+
+
+}
+
+.edit,
+.delete {
+    text-decoration: none;
+    color: rgb(247, 149, 23);
+}
+
+.edit:hover,
+.delete:hover {
+    color: rgb(30, 32, 36);
+    transition: all .2s ease-in-out;
+}
+
 @media screen and (min-width:1280px) {
     .details-container {
         flex-direction: row;
