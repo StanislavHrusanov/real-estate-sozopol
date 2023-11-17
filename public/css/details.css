@@ -72,6 +72,9 @@ table {
 .image-wrapper {
     display: flex;
     position: relative;
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: rgb(170, 170, 170);
 }
 
 .image-wrapper i {
@@ -123,11 +126,11 @@ table {
 }
 
 .carousel img {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     object-fit: cover;
     user-select: none;
     width: 100%;
-    max-height: 77vh;
+    height: 77vh;
 }
 
 .carousel img:first-child {
