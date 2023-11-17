@@ -52,4 +52,15 @@ router.get('/search?', async (req, res) => {
     res.render('catalog/catalog', { ads });
 });
 
+router.get('/:adId/edit', async (req, res) => {
+    const adId = req.params.adId;
+
+    try {
+        const ad = await catalogService.getOne(adId).lean();
+        res.render('catalog/edit', { ad });
+    } catch (error) {
+        res.render('catalog/edit', { error });
+    }
+});
+
 module.exports = router;
