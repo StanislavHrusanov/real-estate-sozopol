@@ -74,9 +74,8 @@
 }
 
 .title-logo {
-    margin: -2.75rem 0rem -3.35rem;
-    height: 150px;
-    width: 195px;
+    height: 70px;
+    width: 162px;
 }
 
 .last-added-title {
@@ -150,6 +149,7 @@
 
     .last-added-container img {
         width: 100%;
+        height: auto;
         aspect-ratio: 16/9;
     }
 
