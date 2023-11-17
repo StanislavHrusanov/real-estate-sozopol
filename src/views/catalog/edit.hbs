@@ -1,0 +1,59 @@
+<main id="form-main">
+    <section class="form-view">
+        <h1>Редактирай обявата</h1>
+        <form method="post" enctype="multipart/form-data" action="" class="forms">
+            <div class="input">
+                <label for="type">Вид имот</label>
+                <select name="type" id="type">
+                    <option value="{{ad.type}}" hidden="hidden" selected="selected">{{ad.type}}</option>
+                    <option value="1-СТАЕН">1-СТАЕН</option>
+                    <option value="2-СТАЕН">2-СТАЕН</option>
+                    <option value="3-СТАЕН">3-СТАЕН</option>
+                    <option value="МНОГОСТАЕН">МНОГОСТАЕН</option>
+                    <option value="КЪЩА">КЪЩА</option>
+                    <option value="ХОТЕЛ">ХОТЕЛ</option>
+                    <option value="МАГАЗИН">МАГАЗИН</option>
+                    <option value="РЕСТОРАНТ">РЕСТОРАНТ</option>
+                    <option value="ПАРЦЕЛ">ПАРЦЕЛ</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="mainImage">Основна снимка</label>
+                <input type="file" name="mainImage" id="mainImage">
+            </div>
+            <div class="input">
+                <label for="images">Допълнителни снимки</label>
+                <input type="file" multiple="" name="images" id="images">
+            </div>
+            <div class="input">
+                <label for="location">Локация</label>
+                <input type="text" name="location" id="location" placeholder="Созопол, ул. Аполония 1"
+                    value="{{ad.location}}">
+            </div>
+            <div class="input">
+                <label for="price">Цена</label>
+                <input type="number" name="price" id="price" placeholder="10000" value="{{ad.price}}">
+            </div>
+            <div class="input">
+                <label for="area">Площ</label>
+                <input type="number" name="area" id="area" placeholder="100" value="{{ad.area}}">
+            </div>
+            <div class="input">
+                <label for="floor">Етаж</label>
+                <input type="text" name="floor" id="floor" placeholder="1 от 2 - (за апартаменти)" value="{{ad.floor}}">
+            </div>
+            <div class="input">
+                <label for="phoneNumber">Телефон</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="0888XXXXXX"
+                    value="{{ad.phoneNumber}}">
+            </div>
+            <div class="input">
+                <label for="info">Допълнителна информация</label>
+                <input type="text" name="info" id="info" placeholder="Текст..." value="{{ad.info}}">
+            </div>
+            <div class="action">
+                <input type="submit" value="Редактирай"></input>
+            </div>
+        </form>
+    </section>
+</main>
