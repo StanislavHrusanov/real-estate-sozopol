@@ -24,10 +24,10 @@ header {
 .home-logo {
     display: inline-block;
     position: absolute;
-    left: -10px;
-    top: -33px;
-    height: 115px;
-    width: 160px;
+    left: 9px;
+    top: 0px;
+    height: 54px;
+    width: 128px;
     z-index: 1000;
 }
 
