@@ -41,8 +41,9 @@ router.get('/:adId/details', async (req, res) => {
     try {
         await catalogService.addView(adId);
         const ad = await catalogService.getOne(adId).lean();
+        const isAuthor = req.user?._id == ad.owner;
 
-        res.render('catalog/details', { ad });
+        res.render('catalog/details', { ad, isAuthor });
 
     } catch (error) {
         res.render('home/404', { error });
