@@ -30,7 +30,9 @@ exports.getOne = (id) => Ad.findById(id);
 
 exports.addView = async (adId) => {
     const ad = await this.getOne(adId);
-
+    if (!ad) {
+        throw ('Not Found!')
+    }
     ad.views += 1;
     await ad.save();
 }
