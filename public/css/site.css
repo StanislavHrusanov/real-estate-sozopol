@@ -213,6 +213,10 @@ footer {
 }
 
 /* dropdown */
+.my-profile i{
+    font-size: 1rem;
+    margin-left: 3px;
+}
 
 .dropdown {
     display: inline-block;
