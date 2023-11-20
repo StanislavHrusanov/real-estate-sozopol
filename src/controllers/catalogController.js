@@ -37,10 +37,16 @@ router.post('/add', imgUpload, async (req, res) => {
 
 router.get('/:adId/details', async (req, res) => {
     const adId = req.params.adId;
-    await catalogService.addView(adId);
-    const ad = await catalogService.getOne(adId).lean();
 
-    res.render('catalog/details', { ad });
+    try {
+        await catalogService.addView(adId);
+        const ad = await catalogService.getOne(adId).lean();
+
+        res.render('catalog/details', { ad });
+
+    } catch (error) {
+        res.render('home/404', { error });
+    }
 });
 
 router.get('/search?', async (req, res) => {
