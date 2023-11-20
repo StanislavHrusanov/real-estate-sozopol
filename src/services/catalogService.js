@@ -20,6 +20,8 @@ exports.uploadToCloudinary = async (files, folder) => {
     return imagesData;
 }
 
+exports.deleteFromCloudinary = (imgId) => cloudinary.uploader.destroy(imgId);
+
 exports.createAd = (ad) => Ad.create(ad);
 
 exports.getlastAdded = () => Ad.find().sort({ createdAt: -1 }).limit(3);
@@ -50,4 +52,16 @@ exports.search = (type, sort, price, area) => {
     }
 
     return Ad.find({ type: type, price: { $lte: currPrice }, area: { $gte: currArea } }).sort(util.sortingCriteria[sort]);
+}
+
+exports.edit = async (adData, newImgData, currentAd, adId) => {
+
+    if (newImgData.length > 0) {
+        const images = currentAd.images;
+        images.shift();
+        images.unshift(newImgData[0]);
+        adData.images = images;
+
+    }
+    return Ad.findByIdAndUpdate(adId, adData);
 }
