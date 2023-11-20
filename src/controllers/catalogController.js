@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const cloudinary = require('../config/cloudinary');
 const imgUpload = require('../middlewares/upload');
 const catalogService = require('../services/catalogService');
 const validation = require('../utils/validation');
@@ -60,6 +59,30 @@ router.get('/:adId/edit', async (req, res) => {
         res.render('catalog/edit', { ad });
     } catch (error) {
         res.render('catalog/edit', { error });
+    }
+});
+
+router.post('/:adId/edit', imgUpload, async (req, res) => {
+    const adData = req.body;
+    const newImgData = [];
+
+    try {
+
+        const currentAd = await catalogService.getOne(req.params.adId);
+
+        if (req.files.mainImage) {
+            const mainImgId = currentAd.images[0].public_id;
+            await catalogService.deleteFromCloudinary(mainImgId);
+            const mainImgData = await catalogService.uploadToCloudinary(req.files, 'properties');
+            newImgData.push(mainImgData[0]);
+        }
+
+        await catalogService.edit(adData, newImgData, currentAd, req.params.adId);
+
+        res.redirect(`/catalog/${req.params.adId}/details`);
+
+    } catch (error) {
+        res.render('catalog/edit', { adData, error });
     }
 });
 
