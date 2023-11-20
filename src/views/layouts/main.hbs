@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Sozopol</title>
     <script src="../../../public/js/showHideNavBar.js" defer></script>
+    <script src="../../../public/js/dropdown.js" defer></script>
     <link rel="stylesheet" href="../../../public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -15,8 +16,7 @@
 
     <div id="box">
         <header>
-            <a class="nav-link" href="/"><img class="home-logo"
-                    src="../../../public/img/logo.png" alt="">
+            <a class="nav-link" href="/"><img class="home-logo" src="../../../public/img/logo.png" alt="">
             </a>
             <button onclick="showHideNavBar()" class="btn-menu"><i class="fas fa-bars"></i></button>
 
@@ -26,7 +26,15 @@
                     <li><a class="nav-link" href="/catalog/add">Добави имот</a></li>
                     {{#if user}}
                     <div id="user">
-                        <li><a class="nav-link" href="">Моят профил</a></li>
+                        <li>
+                            <div class="nav-link dropdown">
+                                <a class="my-profile" onclick="showHideDropdown()">Моят профил</a>
+                                <div class="dropdown-content">
+                                    <a href="https://blog.hubspot.com/">Моите обяви</a>
+                                    <a href="https://academy.hubspot.com/">Запазени обяви</a>
+                                </div>
+                            </div>
+                        </li>
                         <li><a class="nav-link" href="/auth/logout">Изход</a></li>
                     </div>
                     {{else}}
