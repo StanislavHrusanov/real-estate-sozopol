@@ -1,9 +1,11 @@
 <main id="details-page">
     <div class="details-container">
+        {{#if isAuthor}}
         <div class="edit-delete">
             <a href="/catalog/{{ad._id}}/edit" class="edit">Редактирай</a>
             <a href="" class="delete">Изтрий</a>
         </div>
+        {{/if}}
         <h1>{{ad.type}}</h1>
         <h2>{{ad.location}}</h2>
         <div class="image-wrapper">
