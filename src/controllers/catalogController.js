@@ -44,7 +44,7 @@ router.get('/:adId/details', async (req, res) => {
         const isUser = req.user;
         const isAuthor = req.user?._id == ad.owner;
         const isNotAuthor = req.user?._id != ad.owner;
-        const isInFavourites = ad.favourites.find(x => x._id == user?._id);
+        const isInFavourites = ad.favourites.find(x => x._id == req.user?._id);
 
         res.render('catalog/details', { ad, isUser, isAuthor, isNotAuthor, isInFavourites });
 
@@ -102,6 +102,30 @@ router.get('/:adId/delete', async (req, res) => {
     try {
         await catalogService.delete(adId);
         res.redirect('/');
+    } catch (error) {
+        res.render('home/404', { error });
+    }
+});
+
+router.get('/:adId/addToFavourites', async (req, res) => {
+    const adId = req.params.adId;
+    const userId = req.user._id;
+
+    try {
+        await catalogService.addToFavourites(adId, userId);
+        res.redirect(`/catalog/${adId}/details`);
+    } catch (error) {
+        res.render('home/404', { error });
+    }
+});
+
+router.get('/:adId/removeFromFavourites', async (req, res) => {
+    const adId = req.params.adId;
+    const userId = req.user._id;
+
+    try {
+        await catalogService.removeFromFavourites(adId, userId);
+        res.redirect(`/catalog/${adId}/details`);
     } catch (error) {
         res.render('home/404', { error });
     }

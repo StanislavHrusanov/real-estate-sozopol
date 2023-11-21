@@ -1,4 +1,5 @@
 const Ad = require('../models/Ad');
+const User = require('../models/User');
 const cloudinary = require('../config/cloudinary');
 const util = require('../utils/util');
 
@@ -71,3 +72,41 @@ exports.edit = async (adData, newImgData, currentAd, adId) => {
 }
 
 exports.delete = (adId) => Ad.findByIdAndDelete(adId);
+
+exports.addToFavourites = async (adId, userId) => {
+
+    const ad = await Ad.findById(adId).populate();
+    const user = await User.findById(userId).populate();
+    const isUserAdded = ad.favourites.find(x => x._id == userId);
+    const isAdAdded = user.favourites.find(x => x._id == adId);
+
+    if (!isUserAdded) {
+        ad.favourites.push(userId);
+        await ad.save();
+    }
+
+    if (!isAdAdded) {
+        user.favourites.push(adId);
+        await user.save();
+    }
+}
+
+exports.removeFromFavourites = async (adId, userId) => {
+
+    const ad = await Ad.findById(adId).populate();
+    const user = await User.findById(userId).populate();
+    const isUserAdded = ad.favourites.find(x => x._id == userId);
+    const isAdAdded = user.favourites.find(x => x._id == adId);
+
+    if (isUserAdded) {
+        const indexOfUserId = ad.favourites.indexOf(userId);
+        ad.favourites.splice(indexOfUserId, 1);
+        await ad.save();
+    }
+
+    if (isAdAdded) {
+        const indexOfAdId = user.favourites.indexOf(adId);
+        user.favourites.splice(indexOfAdId, 1);
+        await user.save();
+    }
+}
