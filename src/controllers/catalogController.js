@@ -96,4 +96,15 @@ router.post('/:adId/edit', imgUpload, async (req, res) => {
     }
 });
 
+router.get('/:adId/delete', async (req, res) => {
+    const adId = req.params.adId;
+
+    try {
+        await catalogService.delete(adId);
+        res.redirect('/');
+    } catch (error) {
+        res.render('home/404', { error });
+    }
+});
+
 module.exports = router;

@@ -69,3 +69,5 @@ exports.edit = async (adData, newImgData, currentAd, adId) => {
     }
     return Ad.findByIdAndUpdate(adId, adData);
 }
+
+exports.delete = (adId) => Ad.findByIdAndDelete(adId);
