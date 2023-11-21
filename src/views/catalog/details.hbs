@@ -1,10 +1,23 @@
 <main id="details-page">
+    <div class="confirm">
+        <div class="confirm-window">
+            <div class="confirm-titlebar">
+                <span class="confirm-title"></span>
+                <button onclick="showHideConfirm()" class="confirm-close">x</button>
+            </div>
+            <div class="confirm-content">Сигурен ли си, че искаш да изтриеш тази обява?</div>
+            <div class="confirm-buttons">
+                <a href="/catalog/{{ad._id}}/delete" class="confirm-button">Да</a>
+                <button onclick="showHideConfirm()" class="confirm-button">Не</button>
+            </div>
+        </div>
+    </div>
     <div class="details-container">
         {{#if isUser}}
         {{#if isAuthor}}
         <div class="edit-delete">
             <a href="/catalog/{{ad._id}}/edit" class="edit">Редактирай</a>
-            <a href="" class="delete">Изтрий</a>
+            <div onclick="showHideConfirm()" class="delete">Изтрий</div>
         </div>
         {{else}}
         <div class="favourites">
@@ -68,4 +81,4 @@
 
     </div>
 </main>
-<script src="../../../public/js/script.js" defer></script>
+<script src="../../../public/js/imageCarousel.js" defer></script>
