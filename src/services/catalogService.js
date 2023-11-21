@@ -28,6 +28,8 @@ exports.getlastAdded = () => Ad.find().sort({ createdAt: -1 }).limit(3);
 
 exports.getOne = (id) => Ad.findById(id);
 
+exports.getOneDetailed = (id) => Ad.findById(id).populate('favourites');
+
 exports.addView = async (adId) => {
     const ad = await this.getOne(adId);
     if (!ad) {

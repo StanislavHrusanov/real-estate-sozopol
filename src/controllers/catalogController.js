@@ -40,10 +40,13 @@ router.get('/:adId/details', async (req, res) => {
 
     try {
         await catalogService.addView(adId);
-        const ad = await catalogService.getOne(adId).lean();
+        const ad = await catalogService.getOneDetailed(adId).lean();
+        const isUser = req.user;
         const isAuthor = req.user?._id == ad.owner;
+        const isNotAuthor = req.user?._id != ad.owner;
+        const isInFavourites = ad.favourites.find(x => x._id == user?._id);
 
-        res.render('catalog/details', { ad, isAuthor });
+        res.render('catalog/details', { ad, isUser, isAuthor, isNotAuthor, isInFavourites });
 
     } catch (error) {
         res.render('home/404', { error });
