@@ -213,7 +213,7 @@ footer {
 }
 
 /* dropdown */
-.my-profile i{
+.my-profile i {
     font-size: 1rem;
     margin-left: 3px;
 }
@@ -234,8 +234,8 @@ footer {
 
 .dropdown:hover .dropdown-content {
     display: block;
-  }
-  
+}
+
 .dropdown-content a {
     display: block;
     color: #000000;
@@ -274,7 +274,7 @@ footer {
     }
 
     .nav {
-        display: block;
+        display: block !important;
         top: 0;
         background-color: transparent;
     }
