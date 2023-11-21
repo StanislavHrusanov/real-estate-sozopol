@@ -232,9 +232,10 @@ footer {
     background-color: rgb(243, 244, 249);
 }
 
-/* .dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
-  } */
+  }
+  
 .dropdown-content a {
     display: block;
     color: #000000;
@@ -269,6 +270,7 @@ footer {
 
     ul {
         text-align: end;
+        margin-right: 10px;
     }
 
     .nav {

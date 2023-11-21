@@ -1,11 +1,22 @@
 <main id="details-page">
     <div class="details-container">
+        {{#if isUser}}
         {{#if isAuthor}}
         <div class="edit-delete">
             <a href="/catalog/{{ad._id}}/edit" class="edit">Редактирай</a>
             <a href="" class="delete">Изтрий</a>
         </div>
+        {{else}}
+        <div class="favourites">
+            {{#if isInFavourites}}
+            <a href="" class="remove-from-fav">Премахни от наблюдавани</a>
+            {{else}}
+            <a href="" class="add-to-fav">Наблюдавай обявата</a>
+            {{/if}}
+        </div>
         {{/if}}
+        {{/if}}
+
         <h1>{{ad.type}}</h1>
         <h2>{{ad.location}}</h2>
         <div class="image-wrapper">

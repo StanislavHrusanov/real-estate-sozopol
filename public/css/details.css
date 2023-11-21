@@ -156,6 +156,25 @@ table {
     transition: all .2s ease-in-out;
 }
 
+.favourites {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.add-to-fav,
+.remove-from-fav {
+    text-decoration: none;
+    color: rgb(247, 149, 23);
+}
+
+.add-to-fav:hover,
+.remove-from-fav:hover {
+    color: rgb(30, 32, 36);
+    transition: all .2s ease-in-out;
+}
+
 @media screen and (min-width:1280px) {
     .details-container {
         flex-direction: row;
@@ -195,5 +214,9 @@ table {
 
     table {
         margin-bottom: 1rem;
+    }
+
+    .favourites {
+        justify-content: end;
     }
 }
