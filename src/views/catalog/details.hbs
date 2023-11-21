@@ -22,9 +22,9 @@
         {{else}}
         <div class="favourites">
             {{#if isInFavourites}}
-            <a href="" class="remove-from-fav">Премахни от наблюдавани</a>
+            <a href="/catalog/{{ad._id}}/removeFromFavourites" class="remove-from-fav">Премахни от наблюдавани</a>
             {{else}}
-            <a href="" class="add-to-fav">Наблюдавай обявата</a>
+            <a href="/catalog/{{ad._id}}/addToFavourites" class="add-to-fav">Наблюдавай обявата</a>
             {{/if}}
         </div>
         {{/if}}
