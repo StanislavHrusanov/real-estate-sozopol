@@ -1,0 +1,23 @@
+<main id="myAds-main">
+    <div class="my-ads-box">
+        <h1 class="my-ads-title">Моите обяви</h1>
+        {{#if myAds.length}}
+        <div class="my-ads-container">
+            {{#each myAds}}
+            <a href="/catalog/{{_id}}/details">
+                <img src="{{images.0.url}}" alt="">
+                <div class="ad-info">
+                    <span class="ad-type">{{type}}</span>
+                    <span class="ad-kvadratura">{{area}}кв.м</span>
+                    <span class="ad-cena">{{price}} EUR</span>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        {{else}}
+        <div class="no-my-ads">
+            <p>Няма добавени обяви!</p>
+        </div>
+        {{/if}}
+    </div>
+</main>
