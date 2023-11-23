@@ -1,0 +1,104 @@
+#myAds-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 73vh;
+}
+
+.my-ads-title {
+    margin: 1.75rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px black;
+    color: lightseagreen;
+}
+
+.my-ads-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-top: 4.1rem;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    -moz-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+}
+
+.my-ads-container {
+    width: 90%;
+    margin-bottom: 4.75rem;
+}
+
+.my-ads-container img {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(170, 170, 170);
+}
+
+.my-ads-container a {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: white;
+
+}
+
+.my-ads-container a:hover {
+    -webkit-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    -moz-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    border: 2px solid #aaaaaa;
+    transition: all .2s ease-in-out;
+}
+
+.no-my-ads {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45vh;
+}
+
+.no-my-ads p {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width:480px) {
+    .my-ads-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .my-ads-container a {
+        display: block;
+    }
+
+    .my-ads-container img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .my-ads-container {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .my-ads-container {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}
