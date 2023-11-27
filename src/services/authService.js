@@ -40,7 +40,6 @@ exports.login = async ({ username, password }) => {
     const user = await User.findOne({ username });
 
     if (!user) {
-        console.log('log ne');
         throw 'Невалидно потребителско име или парола!';
     }
 
