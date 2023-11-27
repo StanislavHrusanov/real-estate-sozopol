@@ -1,13 +1,15 @@
 const router = require('express').Router();
+const { isLoggedIn } = require('../middlewares/authMiddleware');
+const { isOwner, isNotOwner } = require('../middlewares/routGuards');
 const imgUpload = require('../middlewares/upload');
 const catalogService = require('../services/catalogService');
 const validation = require('../utils/validation');
 
-router.get('/add', async (req, res) => {
+router.get('/add', isLoggedIn, async (req, res) => {
     res.render('catalog/add');
 });
 
-router.post('/add', imgUpload, async (req, res) => {
+router.post('/add', isLoggedIn, imgUpload, async (req, res) => {
     const ad = {
         type: req.body.type,
         location: req.body.location,
@@ -61,7 +63,7 @@ router.get('/search?', async (req, res) => {
     res.render('catalog/catalog', { ads });
 });
 
-router.get('/:adId/edit', async (req, res) => {
+router.get('/:adId/edit', isLoggedIn, isOwner, async (req, res) => {
     const adId = req.params.adId;
 
     try {
@@ -72,7 +74,7 @@ router.get('/:adId/edit', async (req, res) => {
     }
 });
 
-router.post('/:adId/edit', imgUpload, async (req, res) => {
+router.post('/:adId/edit', isLoggedIn, isOwner, imgUpload, async (req, res) => {
     const adData = req.body;
     const newImgData = [];
 
@@ -96,7 +98,7 @@ router.post('/:adId/edit', imgUpload, async (req, res) => {
     }
 });
 
-router.get('/:adId/delete', async (req, res) => {
+router.get('/:adId/delete', isLoggedIn, isOwner, async (req, res) => {
     const adId = req.params.adId;
 
     try {
@@ -107,7 +109,7 @@ router.get('/:adId/delete', async (req, res) => {
     }
 });
 
-router.get('/:adId/addToFavourites', async (req, res) => {
+router.get('/:adId/addToFavourites', isLoggedIn, isNotOwner, async (req, res) => {
     const adId = req.params.adId;
     const userId = req.user._id;
 
@@ -119,7 +121,7 @@ router.get('/:adId/addToFavourites', async (req, res) => {
     }
 });
 
-router.get('/:adId/removeFromFavourites', async (req, res) => {
+router.get('/:adId/removeFromFavourites', isLoggedIn, isNotOwner, async (req, res) => {
     const adId = req.params.adId;
     const userId = req.user._id;
 
