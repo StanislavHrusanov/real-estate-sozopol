@@ -1,0 +1,104 @@
+#myFav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 73vh;
+}
+
+.my-fav-title {
+    margin: 1.75rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px black;
+    color: lightseagreen;
+}
+
+.my-fav-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-top: 4.1rem;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    -moz-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+}
+
+.my-fav-container {
+    width: 90%;
+    margin-bottom: 4.75rem;
+}
+
+.my-fav-container img {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(170, 170, 170);
+}
+
+.my-fav-container a {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: white;
+
+}
+
+.my-fav-container a:hover {
+    -webkit-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    -moz-box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    box-shadow: 0px 1px 15px 6px rgba(170, 170, 170, 1);
+    border: 2px solid #aaaaaa;
+    transition: all .2s ease-in-out;
+}
+
+.no-my-fav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45vh;
+}
+
+.no-my-fav p {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width:480px) {
+    .my-fav-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .my-fav-container a {
+        display: block;
+    }
+
+    .my-fav-container img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .my-fav-container {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .my-fav-container {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}
