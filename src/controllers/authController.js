@@ -2,12 +2,13 @@ const router = require('express').Router();
 const { SESSION_NAME } = require('../config/env');
 const authService = require('../services/authService');
 const validation = require('../utils/validation');
+const { isLoggedIn, isGuest } = require('../middlewares/authMiddleware');
 
-router.get('/register', async (req, res) => {
+router.get('/register', isGuest, async (req, res) => {
     res.render('auth/register');
 });
 
-router.post('/register', async (req, res) => {
+router.post('/register', isGuest, async (req, res) => {
     const userData = req.body;
 
     try {
@@ -24,11 +25,11 @@ router.post('/register', async (req, res) => {
     }
 });
 
-router.get('/login', async (req, res) => {
+router.get('/login', isGuest, async (req, res) => {
     res.render('auth/login');
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', isGuest, async (req, res) => {
     const userData = req.body;
 
     try {
@@ -47,7 +48,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', isLoggedIn, (req, res) => {
     res.clearCookie(SESSION_NAME);
     res.redirect('/');
 });
