@@ -7,4 +7,8 @@ router.get('/', async (req, res) => {
     res.render('home/home', { lastAdded });
 });
 
+router.get('/404', async (req, res) => {
+    res.render('home/404');
+});
+
 module.exports = router;
