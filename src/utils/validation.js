@@ -2,10 +2,10 @@ exports.validateUser = ({ username, firstName, lastName, password, repass, email
     if (username.length < 3 || username.includes(' ')) {
         throw ('Потребителското име трябва да съдържа поне 3 символа различни от интервал!');
     }
-    if (!firstName.match(/^[А-Я][а-я]*$/gm)) {
+    if (!firstName.match(/^[А-Я][а-я]*$|^[A-Z][a-z]*$/gm)) {
         throw ('Името трябва да започва с главна буква!');
     }
-    if (!lastName.match(/^[А-Я][а-я]*$/gm)) {
+    if (!lastName.match(/^[А-Я][а-я]*$|^[A-Z][a-z]*$/gm)) {
         throw ('Фамилията трябва да започва с главна буква!');
     }
     if (password.length < 6 || password.includes(' ')) {
