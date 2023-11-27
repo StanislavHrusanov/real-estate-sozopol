@@ -10,4 +10,14 @@ router.get('/myAds', async (req, res) => {
     }
 });
 
+router.get('/myFavourites', async (req, res) => {
+    try {
+        const userDetails = await myProfileService.getUserDetails(req.user._id).lean();
+        const myFavourites = userDetails.favourites;
+        res.render('myProfile/myFavourites', { myFavourites });
+    } catch (error) {
+        res.render('home/404', { error })
+    }
+});
+
 module.exports = router;
