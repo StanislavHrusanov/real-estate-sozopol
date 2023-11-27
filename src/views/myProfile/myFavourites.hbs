@@ -1,0 +1,23 @@
+<main id="myFav-main">
+    <div class="my-fav-box">
+        <h1 class="my-fav-title">Наблюдавани обяви</h1>
+        {{#if myFavourites.length}}
+        <div class="my-fav-container">
+            {{#each myFavourites}}
+            <a href="/catalog/{{_id}}/details">
+                <img src="{{images.0.url}}" alt="">
+                <div class="ad-info">
+                    <span class="ad-type">{{type}}</span>
+                    <span class="ad-kvadratura">{{area}}кв.м</span>
+                    <span class="ad-cena">{{price}} EUR</span>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        {{else}}
+        <div class="no-my-fav">
+            <p>Няма наблюдавани обяви!</p>
+        </div>
+        {{/if}}
+    </div>
+</main>
