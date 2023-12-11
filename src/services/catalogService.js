@@ -25,7 +25,7 @@ exports.deleteFromCloudinary = (imgId) => cloudinary.uploader.destroy(imgId);
 
 exports.createAd = (ad) => Ad.create(ad);
 
-exports.getlastAdded = () => Ad.find().sort({ createdAt: -1 }).limit(3);
+exports.getlastAdded = () => Ad.find().sort({ createdAt: -1 }).limit(6);
 
 exports.getOne = (id) => Ad.findById(id);
 
