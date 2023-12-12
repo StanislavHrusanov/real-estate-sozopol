@@ -8,10 +8,11 @@
 .catalog-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin: 3.5rem 0 0;
     width: 90%;
+    min-height: 65vh;
 }
 
 .number-of-ads {
@@ -24,6 +25,7 @@
 
 .ads-container {
     width: 100%;
+    margin: 2.75rem 0 1.25rem;
 }
 
 .ads-container img {
