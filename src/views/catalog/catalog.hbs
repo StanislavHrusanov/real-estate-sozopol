@@ -1,7 +1,7 @@
 <main id="catalog-main">
     <div class="catalog-container">
         {{#if ads.length}}
-        <div class="number-of-ads">1 - 12 от общо 100 обяви</div>
+        {{!-- <div class="number-of-ads">1 - 12 от общо 100 обяви</div> --}}
         <div class="ads-container">
             {{#each ads}}
             <a href="/catalog/{{_id}}/details">
@@ -14,7 +14,7 @@
             </a>
             {{/each}}
         </div>
-        <div class="pagination">
+        {{!-- <div class="pagination">
             <button class="prev"><i class="fa-solid fa-left-long"></i></button>
             <div class="pages">
                 <select name="" id="">
@@ -22,7 +22,7 @@
                 </select>
             </div>
             <button class="next"><i class="fa-solid fa-right-long"></i></button>
-        </div>
+        </div> --}}
         {{else}}
         <div class="no-ads">
             <p>Няма намерени обяви!</p>
