@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     width: 96%;
+    min-height: 70vh;
 }
 
 .description {
