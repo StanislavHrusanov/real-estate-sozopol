@@ -31,6 +31,8 @@ router.get('/login', isGuest, async (req, res) => {
 
 router.post('/login', isGuest, async (req, res) => {
     const userData = req.body;
+    userData.username = userData.username.trim();
+    userData.password = userData.password.trim();
 
     try {
 
