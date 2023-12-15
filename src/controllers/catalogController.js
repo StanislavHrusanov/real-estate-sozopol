@@ -10,16 +10,7 @@ router.get('/add', isLoggedIn, async (req, res) => {
 });
 
 router.post('/add', isLoggedIn, imgUpload, async (req, res) => {
-    const ad = {
-        type: req.body.type,
-        location: req.body.location,
-        price: req.body.price,
-        area: req.body.area,
-        floor: req.body.floor,
-        phoneNumber: req.body.phoneNumber,
-        info: req.body.info,
-        views: 0
-    };
+    const ad = req.body;
 
     try {
 
@@ -34,7 +25,6 @@ router.post('/add', isLoggedIn, imgUpload, async (req, res) => {
     } catch (error) {
         res.render('catalog/add', { ad, error });
     }
-
 });
 
 router.get('/:adId/details', async (req, res) => {

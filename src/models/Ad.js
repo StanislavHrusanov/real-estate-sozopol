@@ -39,7 +39,8 @@ const adSchema = new mongoose.Schema({
         type: String
     },
     views: {
-        type: Number
+        type: Number,
+        default: 0
     },
     owner: {
         type: mongoose.Types.ObjectId,
