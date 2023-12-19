@@ -21,6 +21,8 @@ Also every registered user can upload own ad and add properties to watchlist.
     <hr/>
     <img src="./screenshots/add.png"/>
     <hr/>
+    <img src="./screenshots/delete.png"/>
+    <hr/>
     <img src="./screenshots/homeM.png"/>
     <hr/>
     <img src="./screenshots/detailsM.png"/>
