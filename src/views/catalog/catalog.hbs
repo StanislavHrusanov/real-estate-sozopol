@@ -1,7 +1,7 @@
 <main id="catalog-main">
     <div class="catalog-container">
         {{#if ads.length}}
-        <div class="number-of-ads">Има {{ads.length}} намерени обяви от категория {{ads.0.type}}</div>
+        <div class="number-of-ads">Има {{ads.length}} намерени обяви от категория "{{type}}"</div>
         <div class="ads-container">
             {{#each ads}}
             <a href="/catalog/{{_id}}/details">

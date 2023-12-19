@@ -50,7 +50,7 @@ router.get('/search?', async (req, res) => {
 
     const ads = await catalogService.search(type, sort, price, area).lean();
 
-    res.render('catalog/catalog', { ads });
+    res.render('catalog/catalog', { ads, type });
 });
 
 router.get('/:adId/edit', isLoggedIn, isOwner, async (req, res) => {
