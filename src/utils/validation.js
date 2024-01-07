@@ -55,3 +55,42 @@ exports.validateAdData = ({ type, location, price, area, phoneNumber }, files) =
         throw ('Телефонният номер е задължителен!');
     }
 }
+
+exports.validateEditedData = ({ type, location, price, area, phoneNumber }, files) => {
+    const types = ['1-СТАЕН', '2-СТАЕН', '3-СТАЕН', 'МНОГОСТАЕН', 'КЪЩА', 'ХОТЕЛ', 'МАГАЗИН', 'РЕСТОРАНТ', 'ПАРЦЕЛ'];
+    const mimetypes = ['image/jpeg', 'image/png'];
+
+    if (!types.includes(type)) {
+        throw ('Невалиден тип на имота!');
+    }
+
+    if (files.mainImage) {
+        if (!mimetypes.includes(files.mainImage[0].mimetype)) {
+            throw (`Основната снимка е задължителна и трябва да бъде от тип '.jpg' или '.png'!`);
+        }
+    }
+
+    if (files.images) {
+        files.images.forEach(image => {
+            if (!mimetypes.includes(image.mimetype)) {
+                throw (`Допълнителните снимки трябва да бъдат от тип '.jpg' или '.png'!`);
+            }
+        });
+    }
+
+    if (location == '') {
+        throw ('Локацията е задължителна!');
+    }
+
+    if (!price.match(/^[0-9]+$/g)) {
+        throw ('Цената е задължителна и трябва да бъде положително число!');
+    }
+
+    if (!area.match(/^[0-9]+$/g)) {
+        throw ('Площта е задължителна и трябва да бъде положително число!');
+    }
+
+    if (phoneNumber == '') {
+        throw ('Телефонният номер е задължителен!');
+    }
+}

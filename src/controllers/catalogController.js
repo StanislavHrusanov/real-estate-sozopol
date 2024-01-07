@@ -65,10 +65,11 @@ router.get('/:adId/edit', isLoggedIn, isOwner, async (req, res) => {
 });
 
 router.post('/:adId/edit', isLoggedIn, isOwner, imgUpload, async (req, res) => {
-    const adData = req.body;
+    const ad = req.body;
     const newImgData = [];
 
     try {
+        validation.validateEditedData(ad, req.files);
 
         const currentAd = await catalogService.getOne(req.params.adId);
 
@@ -79,12 +80,12 @@ router.post('/:adId/edit', isLoggedIn, isOwner, imgUpload, async (req, res) => {
             newImgData.push(mainImgData[0]);
         }
 
-        await catalogService.edit(adData, newImgData, currentAd, req.params.adId);
+        await catalogService.edit(ad, newImgData, currentAd, req.params.adId);
 
         res.redirect(`/catalog/${req.params.adId}/details`);
 
     } catch (error) {
-        res.render('catalog/edit', { adData, error });
+        res.render('catalog/edit', { ad, error });
     }
 });
 
